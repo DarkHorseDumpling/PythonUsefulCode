@@ -8,12 +8,12 @@ my_dir = "Root Directory Here"
      print("Files", files)
      print('*' * 25)
    print("**********End Print**********")
+   
 
 
+Only Files:
 
-More Detailed:
-
- my_dir = "C:\hgrepos\cadiq_itar\cadiq\config\config_nse"
+ my_dir = "Root Directory Here"
    print("**********Start Print**********")
    for dir, sub, files in os.walk(my_dir):
     print("Print Dir: ", dir)
@@ -26,3 +26,38 @@ More Detailed:
        if os.path.isfile(f):
          print('\tJust The Files', f)
     print()
+    print("**********End Print**********")
+
+
+
+Only Subfolders:
+
+my_dir = "Root Directory Here"
+   print("**********Start Print**********")
+   for dir, sub, files in os.walk(my_dir):
+    print("Print Dir: ", dir)
+    sub = [n for n in sub]
+    sub.sort()
+    
+    for f in sub:
+       print('\tJust The Subs', f)
+    print()
+    print("**********End Print**********")
+    
+    
+    
+File Count:
+
+my_dir = "C:\hgrepos\cadiq_itar\cadiq\config\config_nse"
+   count_file = 0
+   
+   print("**********Start Print**********")
+   for dir, sub, files in os.walk(my_dir):
+    sub = [n for n in sub]
+    content = sub + files
+   for f in content:
+      count_file += 1
+      print("Count:{} File Name: {}".format(count_file, f))
+    
+   print("Final count is: ", count_file)
+   print("**********End Print**********")
