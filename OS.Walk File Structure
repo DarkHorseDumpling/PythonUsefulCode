@@ -1,0 +1,8 @@
+my_dir = "Root Directory Here"
+   print("**********Start Print**********")
+   for root_dir_path, sub_dirs, files in os.walk(my_dir):
+     print("Root Directory Path: ", root_dir_path)
+     print("Sub Directories: ", sub_dirs)
+     print("Files", files)
+     print('*' * 25)
+   print("**********End Print**********")
