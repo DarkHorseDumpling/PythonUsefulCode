@@ -1,3 +1,5 @@
+Basic:
+
 my_dir = "Root Directory Here"
    print("**********Start Print**********")
    for root_dir_path, sub_dirs, files in os.walk(my_dir):
@@ -6,3 +8,21 @@ my_dir = "Root Directory Here"
      print("Files", files)
      print('*' * 25)
    print("**********End Print**********")
+
+
+
+More Detailed:
+
+ my_dir = "C:\hgrepos\cadiq_itar\cadiq\config\config_nse"
+   print("**********Start Print**********")
+   for dir, sub, files in os.walk(my_dir):
+    print("Print Dir: ", dir)
+    sub = [n for n in sub]
+    contents = sub + files
+    contents.sort()
+    
+    for f in contents:
+       f = os.path.join(dir,f)
+       if os.path.isfile(f):
+         print('\tJust The Files', f)
+    print()
